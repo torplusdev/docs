@@ -1,10 +1,34 @@
-App flow
+**Chrome extension**
+
+Extension works by configuring Chrome proxy to use tor SOCKS proxy and routing all the relevant traffic through tor. Relevant traffic in this case, may be all of the traffic, or only traffic targeting torplus resources (using PAC proxy configuration).
+
+The following are the key responsibilities of the chrome extension:
+
+- Chrome proxy configuration according to the selected mode.
+
+- Triggering DNS/ENS name resolution for torplus resources
+
+- Reporting time spent at torplus resources via attend report functionality
+
+- User interface that reflects key account properties, mainly state (trial, paying, etc), balance and a chart of payment requests and the actual payments done.
+
+  
+
+**Client**
+
+The client package includes the basic infrastructure components of tor, ipfs and paymentgateway and in addition the chrome extension that allows access to torplus resources using Chrome browser.
+
+The extension is installed via Chrome Web Store ("TorPlus extension") available at https://chrome.google.com/webstore/detail/torplus-extension/cajbbnoklgmlkodcbdaecmganelijcgg?hl=en&authuser=1
+
+
+
+**App flow**
 
 https://miro.com/app/board/o9J_lSGHzng=/
 
 
 
-Open source infrastructure modifications
+**Open source infrastructure modifications**
 
 
 
@@ -77,3 +101,124 @@ This is the hidden service address for your web resource, save it for further co
 6. At the website DNS management API, add a TXT record that contains the following string "torplus=<onion address>"
 
    Where <onion address> is the hidden service address save at the end of the previous step.
+
+
+
+
+
+**URL Routing**
+
+TorPlus uses custom url resolution in order to enable to resources deployed on torplus network.
+For each method, the first step would be to obtain an onion address by running torplus container, or by using any other method - and in case of DNS - obtaining SSL certificate for the relevant domain.
+
+There are two resolution methods implemented:
+
+- ENS resolution
+  For a website to use Ethereum Naming, an association needs to be formed on ETH. On ENS, association is formed by using a unique keyword for identifying a resource. For example for keyword **video** an association is created  using content record at *video.torplus.eth* address that contains the onion address for the resource. 
+
+  Once set up, the resource will be made available by using Chrome with torpolus extension to open the following url: http://sites.torplus.com/#video 
+
+  Note the hash sign after the hostname, and that the domain used is torplus.com, and not eth. TorPlus resolution logic handles ENS query and replacing the hostname with the correct one.
+  An example for such configuration can be seen at https://app.ens.domains/name/video.torplus.eth
+
+  
+
+- DNS resolution
+  Websites that use DNS resolution, expose the resource on torplus.<domain name> address. Once such a resource is accessed by Chrome with TorPlus extension, DNS for the domain is queried and if TXT record exists with torplus entry (torplus=<onion address without the .onion suffix>) the onion address is used for resource access.
+
+  An example for such configuration can be seen at https://dns.google.com/query?name=torplus.videotpdemo.com&rr_type=ALL&ecs=&show_dnssec=true
+
+
+
+The following is a flowchart of url resolution logic
+
+```flow
+%% url name resolution
+st=>start: url request
+ens=>condition: check if url targets sites.torplus.com or .eth
+dns=>condition: check if url contains .torplus
+website=>condition: check if url targets www.torplus.com
+resolving_ens=>operation: Use ENS resolution
+resolving_dns=>operation: Use DNS resolution
+resolving_none=>operation: Use url as-is
+e=>end
+
+st->ens
+ens(yes)->resolving_ens
+ens(no)->dns
+dns(yes)->website
+dns(no)->resolving_none
+website(yes)->resolving_none
+website(no)->resolving_dns
+```
+
+
+
+The logic is implemented mainly in TorPlus Chrome extension. In case the extension is not installed, the routing logic depends on website configuration. For websites configured using TorPlus content provider container, the user will be redirected to download.torplus.com for guidance on extension installation.
+
+Detailed flow and responsibilities in url resolution:
+```mermaid
+%% url resolution flow
+  sequenceDiagram
+    Extension->>Extension: Check if resolution is required
+    Extension->>PaymentGateway: Call /api/resolver/setupResolving to trigger resolution process
+    PaymentGateway->>DNS/ENS: Query external service 
+    DNS/ENS->>PaymentGateway: Name resolution data
+    PaymentGateway->>Extension: Return resolution result
+    Extension->>Tor: Request is delivered to Tor via SOCKS proxy    
+    Tor->>PaymentGateway: Query name association for hostname (/api/resolver/resolve)
+    PaymentGateway->>Tor: Supply onion association for hostname
+    
+    
+
+
+
+
+```
+
+
+
+
+
+**Payments in TorPlus**
+
+Payment for services is implemented in TorPlus using Stellar custom asset (https://developers.stellar.org/docs/issuing-assets/). 
+Each service provider is responsible for issuing payment requests (PR) that are sent back to client. Client performs the payment operation and service continues until the next PR. If payment is not done in time, or isn't completed successfully, the service is degraded, or stopped. PaymentGateway is responsible for issuing PR, performing payment and any other functionality related to payments in TorPlus. Payment-related data can be sent using tor, or in-band with the relevant protocol (ipfs, http).
+
+High-level diagram of the payment process using payment chain of 3 nodes
+
+```mermaid
+%% Payment process
+  sequenceDiagram
+    Participant C as Client
+    Participant N1 as Node1
+    Participant N2 as Node2
+    Participant N3 as Node3    
+    Participant S as Service
+    C->>S: Service usage    
+    S->>+C: Payment Request
+    C->>C: PR validation
+    C->>N1: Create transaction Client->Node1
+    N1-->>C: Transaction Client->Node1    
+    C->>N2: Create transaction Node1->Node2
+    N2-->>C: Transaction Node1->Node2
+    C->>N3: Create transaction Node2->Node3
+    N3-->>C: Transaction Node2->Node3
+    C->>S: Create transaction Node3->Service
+    S-->>C: Transaction Node3->Service    
+    C->>C: Sign transaction Client->Node1
+    C->>N1: Sign transaction Node1->Node2
+    N1-->>C: Signed transaction Node1->Node2
+    C->>N2: Sign transaction Node2->Node3
+    N1-->>C: Signed transaction Node2->Node3
+    C->>N3: Sign transaction Node3->Service
+    N3-->>C: Signed transaction Node3->Service
+    C->>S: Deliver signed transaction Node3->Service    
+    C->>N3: Deliver signed transaction Node2->Node3
+	C->>N2: Deliver signed transaction Node1->Node2
+	C->>N1: Deliver signed transaction C->Node1
+	C-->>-S: Payment complete
+	C->>S: Service usage    
+
+
+```
