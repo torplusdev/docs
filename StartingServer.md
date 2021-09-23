@@ -13,7 +13,7 @@ You can either use this account directly with TorPlus. Alternatively, you can cr
 Assuming `SECRET` is the secret key for your main XLM account (the one we've just generated above):
 
 ```
-$ docker run -it  \
+$ docker run -rm  \
             -v tpconf:/var/torplus/conf \
             SECRET \
             torplus_create_server_conf
