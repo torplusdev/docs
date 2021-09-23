@@ -12,11 +12,8 @@ You can either use this account directly with TorPlus. Alternatively, you can cr
 
 Assuming `SECRET` is the secret key for your main XLM account (the one we've just generated above):
 
-```
-$ docker run -rm  \
-            -v tpconf:/var/torplus/conf \
-            SECRET \
-            torplus_create_server_conf
+```shell
+$ docker run -rm -v tpconf:/var/torplus/conf SECRET torplus_create_server_conf
 ```
 
 This will:
@@ -29,11 +26,7 @@ Note that `SECRET` is *not* stored.
 
 Next, to start a TorPlus web server rooted at `$(PWD)/www`, run:
 
-```
-$ docker run --rm \
-      -p 80:80 \
-      -v $(PWD)/www:/opt/www \
-      -v tpconf:/var/torplus/conf  \
-      torplus_web_server
+```shell
+$ docker run --rm -p 80:80 -v $(PWD)/www:/opt/www -v tpconf:/var/torplus/conf torplus_web_server
 ```
 
