@@ -8,7 +8,11 @@ Here’s an example how to create a new XLM wallet on the web based StellarTerm 
 1.	Go to https://stellarterm.com/ and choose “New Account” and follow the instructions to create a new account. Write down the secret & public keys.
 2.	You will now need to deposit funds into this account. You can buy XLM directly via StellarTerm using a credit card, or you can use an exchange such as LetsExchange (https://letsexchange.io/) to convert BTC, ETH or some other coin
 
-You can either use this account directly with TorPlus. Alternatively, you can create an account for each TorPlus server and transfer any gains from the servers to the “main” account periodically using TorPlus Tools (https://github.com/torplusdev/torplus_tools):
+You can either use this account directly with TorPlus. Alternatively, you can create an account for each TorPlus server and transfer any gains from the servers to the “main” account periodically using TorPlus Tools (https://github.com/torplusdev/torplus_tools).
 
-…
+Assuming `SECRET` is the secret key for your main XLM account (the one we've just generated above):
+
+```
+docker run -it create_and_fund SECRET
+```
 
