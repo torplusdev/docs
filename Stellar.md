@@ -4,13 +4,7 @@ TorPlus's native tokens - `torplus_tokens` - are implemented as Stellar `assets`
 
 ![Stellar modules](./images/stellar modules.png)
 
-Accounts are at the heart of the Stellar network. Accounts hold a balance in XLM, `torplus_token` or any other valid Stellar asset. An account consists of a Account ID (public key) and a *secret* (private) key. The Account ID is public: anyone can pay to the account, while the secret key is ... secret. Knowing the secret key is required for paying _by_ this account. For example, `SB66SLUNMNW4CP3JDZV2OUGPEELDNWQTVN6ZM2RRWKTZ3F2VG64JK5SR` is a secret key and `GDEAZKI6RFHTVJ5SG7HUZYIQKBUIEVRJOG75XODHXJUEYKTNEHO5P3A2` is its (public) account ID.
-
-Stellar account is described using a seed (private key) and an address (public key).
-Seed should stay a secret, since it allows to make changes to the account - including payments to any account.
-**Public address** is the one you can use for accepting payments, or publicly identifying your account.
-Public address can be restored from the seed if you forget it, but no the other way around. 
-Seed can not be restored if lost, effectively losing the account.
+Accounts are at the heart of the Stellar network. Accounts hold a balance in XLM, `torplus_token` or any other valid Stellar asset. An account consists of a Account ID (public key) and a *secret* (private) key. The Account ID is public: anyone can pay to the account, while the secret key is ... secret. Knowing the secret key is required for paying _by_ this account. For example, `SB66SLUNMNW4CP3JDZV2OUGPEELDNWQTVN6ZM2RRWKTZ3F2VG64JK5SR` is a secret key and `GDEAZKI6RFHTVJ5SG7HUZYIQKBUIEVRJOG75XODHXJUEYKTNEHO5P3A2` is its (public) account ID. Needless to say (but we'll say it anyway) **keep your secret keys secret**.
 
 To use a stellar account with TorPlus it needs to be able to make and accept payments in TorPlus currency - "pptoken" assets.
 A stellar asset is defined using two parameters, asset code and issuer.
