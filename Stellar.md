@@ -1,4 +1,4 @@
-#TorPlus Stellar integration
+# TorPlus Stellar integration
 
 TorPlus's native tokens - `torplus_tokens` - are implemented as Stellar `assets`. All (micro)payments in the TorPlus ecosystem utilize `torplus_tokens`. `torplus_tokens` can be exchanged to/from Stellar's native token - XLM (Lumen) - via the decentralized exchange (DEX) mechanisms built into Stellar.
 
