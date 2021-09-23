@@ -13,6 +13,27 @@ You can either use this account directly with TorPlus. Alternatively, you can cr
 Assuming `SECRET` is the secret key for your main XLM account (the one we've just generated above):
 
 ```
-docker run -it create_and_fund SECRET
+$ docker run -it  \
+            -v tpconf:/var/torplus/conf \
+            SECRET \
+            torplus_create_server_conf
+```
+
+This will:
+- Create a new Stellar wallet
+- Activate it by paying 2 lumens from `SECRET`
+- Enable it to use TorPlus coins
+- Store the seed for the new wallet in the `tpconf` Docker volume
+
+Note that `SECRET` is *not* stored.
+
+Next, to start a TorPlus web server rooted at `$(PWD)/www`, run:
+
+```
+$ docker run --rm \
+      -p 80:80 \
+      -v $(PWD)/www:/opt/www \
+      -v tpconf:/var/torplus/conf  \
+      torplus_web_server
 ```
 
