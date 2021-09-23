@@ -1,14 +1,10 @@
-**TorPlus Stellar integration**
+#TorPlus Stellar integration
 
-TorPlus uses Stellar blockchain for microtransactions and managing payments in the system.
-Stellar native currency is XLM (Lumens) and XLM balance is required for every live account.
-Besides providing fees
-
-
+TorPlus's native tokens - `torplus_tokens` - are implemented as Stellar `assets`. All (micro)payments in the TorPlus ecosystem utilize `torplus_tokens`. `torplus_tokens` can be exchanged to/from Stellar's native token - XLM (Lumen) - via the decentralized exchange (DEX) mechanisms built into Stellar.
 
 ![Stellar modules](./images/stellar modules.png)
 
-
+Accounts are at the heart of the Stellar network. Accounts hold a balance in XLM, `torplus_token` or any other valid Stellar asset. An account consists of a Account ID (public key) and a *secret* (private) key. The Account ID is public: anyone can pay to the account, while the secret key is ... secret. Knowing the secret key is required for paying _by_ this account. For example, `SB66SLUNMNW4CP3JDZV2OUGPEELDNWQTVN6ZM2RRWKTZ3F2VG64JK5SR` is a secret key and `GDEAZKI6RFHTVJ5SG7HUZYIQKBUIEVRJOG75XODHXJUEYKTNEHO5P3A2` is its (public) account ID.
 
 Stellar account is described using a seed (private key) and an address (public key).
 Seed should stay a secret, since it allows to make changes to the account - including payments to any account.
