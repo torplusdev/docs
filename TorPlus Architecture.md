@@ -1,3 +1,33 @@
+**Introduction**
+
+TorPlus is an integrated solution that provides an anonymized and secure access to internet resources without compromising network performance, latency and service quality.
+TorPlus package is composed of multiple open-source component that are structured together in a seamless manner, so that the end user is able to use TorPlus functionality without deep technical knowledge and without being familiar with the individual components.
+In order to achieve this, TorPlus ties together several infrastructure elements and provides a default configuration which is good enough for most cases. Nonetheless, any module can be reconfigured and modified, since TorPlus exclusively uses open-source components. To make sure that TorPlus users get quality performance and service providers get an incentive to provide high quality of service, TorPlus uses micropayments to pay the individual service and content providers, based on the service actually consumed by the client. The micropayments are done in a decentralized manner, by the client himself, so that the service stays anonymous and unmonitored.
+
+The current document describes in detail the TorPlus system architecture and the key components used as part of a TorPlus solution.
+
+
+**Architecture**
+
+From the client point of view, TorPlus is mainly used for accessing web resources using the Chrome browser.
+TorPlus client installation package installs TorPlus Chrome browser extension, that enables access to the TorPlus network. The TorPlus browser extension is responsible for configuring the browser to use tor via SOCKS proxy configuration, as well as for displaying payment-related information and for providing options for configuring the TorPlus  browser extension. In addition to the above, TorPlus extension also performs attention reporting (this enables us to incentivize owners of the web sites on TorPlus network) and makes sure that the remote resources are accessed with minimal latency.
+
+![Architecture](./images/top_architecture.png)
+
+
+
+TorPlus module is responsible for providing secure and anonymous communication channel for rest of the services. TorPlus is an extended version of a well-known tor application (https://www.torproject.org/). We have taken great care to improve tor performance and provide incentives to tor operators for high quality service, without sacrificing the security and anonymity guarantees provided by tor. Secure communications channels set up by tor are used by all other components - by the browser for accessing resources, by PaymentGateway for managing payments while keeping anonymity intact and by IPFS for secure access to files and content.
+
+IPFS (Interplanetary File System - https://ipfs.io/) that TorPlus uses is an extended version of the standard ipfs distribution that has been extended with support for micropayment, a few performance optimizations, and configured only to use secure communication channels provided by tor. Thanks to the distributed nature of IPFS, no single server owns the data and multiple copies of the same content exist in the network - improving anonymity and providing higher bandwidth to clients accessing the content.
+
+All handling of payment operations is done by the PaymentGateway module. All payment transactions in TorPlus are performed using Stellar blockchain (https://developers.stellar.org/docs) in a decentralized manner. Each payment transaction refers to the specific service that has been consumed by the client and targets the relevant service provider as the recipient of the micropayment. 
+
+Last, but not least, the TorPlus Chrome extension is responsible for making sure that using TorPlus is as easy as opening your favorite browser. Once installed, TorPlus resources can be accessed from the convenience of your browser.
+
+Detailed description of each component can be found  below.
+
+
+
 **Chrome extension**
 
 Extension works by configuring Chrome proxy to use tor SOCKS proxy and routing all the relevant traffic through tor. Relevant traffic in this case, may be all of the traffic, or only traffic targeting torplus resources (using PAC proxy configuration).
