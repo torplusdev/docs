@@ -163,7 +163,7 @@ https://www.whatsmydns.net/#TXT/torplus.{domain}
 
 ## If use let's encrypt:
 
-#install certbot:
+## install certbot:
     apt update && apt install -y certbot
 
     domain=<yourdomains>
@@ -171,8 +171,8 @@ https://www.whatsmydns.net/#TXT/torplus.{domain}
     certbot certonly --standalone -d ${domain} \
                 --non-interactive --agree-tos --email ${email} \
                 --http-01-port=80
-
-cat /etc/letsencrypt/live/${domain}/fullchain.pem /etc/letsencrypt/live/${domain}/privkey.pem > ${torplusworkspace}/ssl/${domain}.pem
+    
+    cat /etc/letsencrypt/live/${domain}/fullchain.pem /etc/letsencrypt/live/${domain}/privkey.pem > ${torplusworkspace}/ssl/${domain}.pem
 
 ## Pull docker image:
 
