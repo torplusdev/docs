@@ -52,7 +52,7 @@ echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
     seed=SCR27IGKMKXSOKUV7AC4T3HBTBVBL2MI45HHFSDNRYJFFVKWQAWBBKKZ # set your seed
  
 ## run docker container
- docker run \
+docker run \
     --name torplusipfs \
     -p 28000:28080 \
     -e nickname=${nickname} \
