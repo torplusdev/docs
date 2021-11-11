@@ -62,7 +62,7 @@ echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
     -v ${PWD}/ipfs:/root/.ipfs \
     -v ${PWD}/hidden_service:/root/hidden_service \
     --rm \
- torplusdev/production:ipfs-latest
+    torplusdev/production:ipfs-latest
 
 ## Add new files to ipfs
 
