@@ -182,8 +182,8 @@ cat /etc/letsencrypt/live/${domain}/fullchain.pem /etc/letsencrypt/live/${domain
     seed=SCR27IGKMKXSOKUV7AC4T3HBTBVBL2MI45HHFSDNRYJFFVKWQAWBBKKZ # set your seed
     nickname=tum33212 # set your nickname
     http_address=1.1.1.1:80 # set your webserver ip/name. the port :80 must be entered after ip or domain
-##
-  docker run \
+
+##  docker run \
             --name torplus \
             -e nickname=${nickname} \
             -e seed=${seed} \
