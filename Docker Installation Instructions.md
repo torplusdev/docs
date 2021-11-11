@@ -182,23 +182,22 @@ cat /etc/letsencrypt/live/${domain}/fullchain.pem /etc/letsencrypt/live/${domain
     seed=SCR27IGKMKXSOKUV7AC4T3HBTBVBL2MI45HHFSDNRYJFFVKWQAWBBKKZ # set your seed
     nickname=tum33212 # set your nickname
     http_address=1.1.1.1:80 # set your webserver ip/name. the port :80 must be entered after ip or domain
-
-  docker run \\
-            --name torplus \\
-            -e nickname=${nickname} \\
-            -e seed=${seed} \\
-            -e role=hs_client \\
-            -e HOST_PORT=80 \\
-            -e PP_ENV=prod \\
-            -e http_address=${http_address} \\
-            -p 80:80 \\
-            -p 28000:28080 \\
-            -v ${PWD}/tor:/root/tor \\
-            -v ${PWD}/ipfs:/root/.ipfs \\
-            -v ${PWD}/ssl:/etc/ssl/torplus/ \\
-            -v ${PWD}/hidden_service:/root/hidden_service \\
-            --add-host host.docker.internal:host-gateway \\
-            --rm \\
+  docker run \
+            --name torplus \
+            -e nickname=${nickname} \
+            -e seed=${seed} \
+            -e role=hs_client \
+            -e HOST_PORT=80 \
+            -e PP_ENV=prod \
+            -e http_address=${http_address} \
+            -p 80:80 \
+            -p 28000:28080 \
+            -v ${PWD}/tor:/root/tor \
+            -v ${PWD}/ipfs:/root/.ipfs \
+            -v ${PWD}/ssl:/etc/ssl/torplus/ \
+            -v ${PWD}/hidden_service:/root/hidden_service \
+            --add-host host.docker.internal:host-gateway \
+            --rm \
             torplusdev/production:ipfs_haproxy-latest
 
 ## Add text record to DNS:
