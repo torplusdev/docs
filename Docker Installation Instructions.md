@@ -118,7 +118,9 @@ Open Chrome browser with TorPlus installed on your computer and follow the link 
     cd ${torplusworkspace}
     seed=SCR27IGKMKXSOKUV7AC4T3HBTBVBL2MI45HHFSDNRYJFFVKWQAWBBKKZ  # set your seed
     nickname=tum332 # set your nickname
-docker run \
+    
+## Run docker
+    docker run \
         --name torplus \
         -e nickname=${nickname} \
         -e seed=${seed} \
