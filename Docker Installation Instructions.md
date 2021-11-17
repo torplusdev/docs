@@ -78,7 +78,8 @@ echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
 ## Check uploaded files ipfs:
 
 #Copy cid link from previous step
-Open Chrome browser with TorPlus installed on your computer and follow the link http://localhost:8080/ipfs/<cid>  # Playback or display of the file uploaded to the ipfs will start, if the file format is not supported by the site, then it will be downloaded to the computer. Attention!!! This verification will be charged for using the TorPlus network!
+Open Chrome browser with TorPlus installed on your computer and follow the link
+http://localhost:8080/ipfs/<cid>  # Playback or display of the file uploaded to the ipfs will start, if the file format is not supported by the site, then it will be downloaded to the computer. Attention!!! This verification will be charged for using the TorPlus network!
 
 # Run web site as host
 
