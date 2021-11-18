@@ -73,7 +73,7 @@ echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
     sudo mkdir -p ./data
     sudo cp ~/<the path to the file that we will upload to the ipfs network> /${torplusworkspace}/ipfs/data  # The file that we will upload to the ipfs is copied to the folder
     sudo docker exec -it torplusipfs /bin/bash
-    ./ipfs add ~/.ipfs/data/<file name>  # After successfully uploading the file to the ipfs, a message is displayed "added <cid> <file name>"
+     ./ipfs add ~/.ipfs/data/<file name>  # After successfully uploading the file to the ipfs, a message is displayed "added <cid> <file name>"
 
 ## Check uploaded files ipfs:
 
