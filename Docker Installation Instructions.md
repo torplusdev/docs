@@ -36,7 +36,7 @@ Nickname- Nickname is some user friendly name that is used in Tor.
 
 Use login and password is secret
 
-echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
+    echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
 
 # Run IPFS client
 
@@ -79,8 +79,21 @@ echo 'ide!$QjNSF@e$8xX' | docker login --username torplusdev --password-stdin
 ## Check uploaded files ipfs:
 
 #Copy cid link from previous step
-Open Chrome browser with TorPlus installed on your computer and follow the link
-http://localhost:8080/ipfs/"cid"  # Playback or display of the file uploaded to the ipfs will start, if the file format is not supported by the site, then it will be downloaded to the computer. Attention!!! This verification will be charged for using the TorPlus network!
+    Open Chrome browser with TorPlus installed on your computer and follow the link http://localhost:8080/ipfs/"cid"  # Playback or display of the file uploaded to the ipfs will start, if the file format is not supported by the site, then it will be downloaded to the computer. Attention!!! This verification will be charged for using the TorPlus network!
+    
+## Setting and testing Video site:
+
+    1. Go to the site https://torplus.videotpdemo.com/wp-admin/
+    2. Enter login "admin" and password "pP6LPt9IQ9e@0BkJIA" and click on the login button.
+    3. At the top left, move the cursor over the drop-down menu "da-video" and click on "Visit Site".
+    ![image](https://user-images.githubusercontent.com/52072466/143416916-0071782d-16df-46c8-abc4-4b5501e0f74c.png)
+    4. Go to the video page (for example https://torplus.videotpdemo.com/video/sefozie-world/).
+    5. Click on the "Edit Video" button.
+    ![image](https://user-images.githubusercontent.com/52072466/143417235-44c2b2b4-f9a3-4d22-a33c-d1e99b11f8db.png)
+    6. In the "Video data" block, change the path to the video in the field "Embed Video". (for example <iframe src="https://torplus.videotpdemo.com/ipfs/<your CID here>" allowfullscreen></iframe>). Сlick on the update button.
+    ![image](https://user-images.githubusercontent.com/52072466/143417536-fcb44ffc-849b-4a2b-bf85-aa5ebfccc357.png)
+    7. Go to the video page https://torplus.videotpdemo.com/video/sefozie-world/ and the added video will be displayed on the page.
+
 
 # Run web site as host
 
