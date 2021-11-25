@@ -78,7 +78,8 @@ Use login and password is secret
 
 ## Check uploaded files ipfs:
 
-#Copy cid link from previous step
+#Copy cid link from previous step. 
+
     Open Chrome browser with TorPlus installed on your computer and follow the link http://localhost:8080/ipfs/"cid"  # Playback or display of the file uploaded to the ipfs will start, if the file format is not supported by the site, then it will be downloaded to the computer. Attention!!! This verification will be charged for using the TorPlus network!
     
 ## Setting and testing Video site:
@@ -191,7 +192,7 @@ https://www.whatsmydns.net/#TXT/torplus.{domain}
 
 ## Pull docker image:
 
- docker pull torplusdev/production:ipfs_haproxy-latest
+    docker pull torplusdev/production:ipfs_haproxy-latest
 
 ## Run docker container:
 
