@@ -92,9 +92,9 @@ Use login and password is secret
 ![alt tag](https://user-images.githubusercontent.com/52072466/143416916-0071782d-16df-46c8-abc4-4b5501e0f74c.png)
     4. Go to the video page (for example https://torplus.videotpdemo.com/video/sefozie-world/).
     5. Click on the "Edit Video" button.
-    ![image](https://user-images.githubusercontent.com/52072466/143417235-44c2b2b4-f9a3-4d22-a33c-d1e99b11f8db.png)
+![image](https://user-images.githubusercontent.com/52072466/143417235-44c2b2b4-f9a3-4d22-a33c-d1e99b11f8db.png)
     6. In the "Video data" block, change the path to the video in the field "Embed Video". (for example <iframe src="https://torplus.videotpdemo.com/ipfs/<your CID here>" allowfullscreen></iframe>). Сlick on the update button.
-    ![image](https://user-images.githubusercontent.com/52072466/143417536-fcb44ffc-849b-4a2b-bf85-aa5ebfccc357.png)
+![image](https://user-images.githubusercontent.com/52072466/143417536-fcb44ffc-849b-4a2b-bf85-aa5ebfccc357.png)
     7. Go to the video page https://torplus.videotpdemo.com/video/sefozie-world/ and the added video will be displayed on the page.
 
 
