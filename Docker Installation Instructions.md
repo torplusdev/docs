@@ -89,7 +89,7 @@ Use login and password is secret
     1. Go to the site https://torplus.videotpdemo.com/wp-admin/
     2. Enter login "admin" and password "pP6LPt9IQ9e@0BkJIA" and click on the login button.
     3. At the top left, move the cursor over the drop-down menu "da-video" and click on "Visit Site".
-    ![alt text](https://user-images.githubusercontent.com/52072466/143416916-0071782d-16df-46c8-abc4-4b5501e0f74c.png?raw=true)
+    ![alt tag](https://user-images.githubusercontent.com/52072466/143416916-0071782d-16df-46c8-abc4-4b5501e0f74c.png?raw=true)
     4. Go to the video page (for example https://torplus.videotpdemo.com/video/sefozie-world/).
     5. Click on the "Edit Video" button.
     ![image](https://user-images.githubusercontent.com/52072466/143417235-44c2b2b4-f9a3-4d22-a33c-d1e99b11f8db.png)
