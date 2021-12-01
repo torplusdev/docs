@@ -249,9 +249,11 @@ https://www.whatsmydns.net/#TXT/torplus.{domain}
     5. Start or restart (if open) Сhrome browser.
     6. In the browser message "Torplus extension add" click on the button Enable extension.
 ![image](https://user-images.githubusercontent.com/52072466/144256915-900f09a6-fb4f-4e52-ae57-55a3b9ce6900.png)
+    
     7. Go to https://torplus.{your domain name}  # There is a successful transition to the site https://torplus.{your domain name}
     8. Сlick on the Torplus extension with the left mouse button and switch the switch position to off mode.
 ![image](https://user-images.githubusercontent.com/52072466/144257475-42afcdba-4e73-4ce2-aa27-adb83cfeedea.png)
+    
     9. Go to https://torplus.{your domain name}  # There is a redirect to the page for requires the Torplus application https://torplus.com/requires/
 
 
