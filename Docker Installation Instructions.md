@@ -177,12 +177,24 @@ Use login and password is secret
 
 ## Add text record to DNS:
 
-    cat ${torplusworkspace}/hidden_service/hsv3/hostname
- 
-    torplus=<onion address without .onion suffix>
+    1. Echo onion address to console: 
+    Run command:
+    echo torplus=$(cat hidden_service/hsv3/hostname)
+![image](https://user-images.githubusercontent.com/52072466/144443915-afac936e-7eb7-4304-a834-3c017e3d3633.png)
+    
+    2. Add it to DNS TXT records:
+    Reg ru service (https://www.reg.ru/):
+![image](https://user-images.githubusercontent.com/52072466/144444036-fc43cd0f-3bec-476e-a9fd-ad311194d236.png)
 
-#For check TXT record you can use 
-https://www.whatsmydns.net/#TXT/torplus.{domain}
+    #Azure portal service:
+    1. Find DNS zone in resources:
+![image](https://user-images.githubusercontent.com/52072466/144444462-f22bd46f-b3a4-485f-8b40-95eaccc276b9.png)
+
+    2. Add record set:
+![image](https://user-images.githubusercontent.com/52072466/144444576-29546bca-449a-49fa-97c3-abb27d45a924.png)
+
+    3. Check txt record. Open https://www.whatsmydns.net/#TXT/ Enter your domain name.
+![image](https://user-images.githubusercontent.com/52072466/144444770-2c565917-52d3-4f49-ba28-ef4efafa0d0d.png)
 
 ## Add torplus subdomain to your domain
 
