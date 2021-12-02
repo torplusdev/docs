@@ -146,7 +146,7 @@ Use login and password is secret
                    <source src="/ipfs/insert your cid here">
                   </video>
                  </body>
-               </html>" >> ./static/index.html # or copy your static files
+               </html>" > ./static/index.html # or copy your static files
 
 ## Run docker image:
 
