@@ -96,7 +96,7 @@ Use login and password is secret
 ![image](https://user-images.githubusercontent.com/52072466/144410808-e10f8e80-db67-4bb2-95d9-23e06813e01d.png)
 ![image](https://user-images.githubusercontent.com/52072466/144410921-6ead500a-9822-4952-aff4-904ef575db13.png)
 
-    6. When inserting a video block, select "Insert from URL", enter a link to the video file in the format https://torplus.{your domain name}/ipfs/<cid> click on the button "Upload" and click on "Publish" or "Update".
+    6. When inserting a video block, select "Insert from URL", enter a link to the video file in the format "/ipfs/<cid>" click on the button "Upload" and click on "Publish" or "Update".
 ![image](https://user-images.githubusercontent.com/52072466/144411109-0769a596-7a6c-4b60-9894-cc768ed471c6.png)
 
     7. When you click on the "Preview" button, a WordPress site page and the added video will be displayed on the page.
@@ -148,7 +148,7 @@ Use login and password is secret
         -e role=hs_client \
         -e HOST_PORT=80 \
         -e PP_ENV=prod \
-        -e http_address=127.0.0.1 \
+        -e http_address=127.0.0.1:80 \
         -e useNginx=1 \
         -p 80:80 \
         -p 28000:28080 \
@@ -204,7 +204,7 @@ https://www.whatsmydns.net/#TXT/torplus.{domain}
     cd ${torplusworkspace}
     seed=SCR27IGKMKXSOKUV7AC4T3HBTBVBL2MI45HHFSDNRYJFFVKWQAWBBKKZ # set your seed
     nickname=tum33212 # set your nickname
-    http_address=1.1.1.1:80 # set your webserver ip/name. the port :80 must be entered after ip or domain
+    http_address=1.1.1.1:80 # set your webserver ip/name. The port :80 must be entered after ip or domain
 
 ##  Run docker:
     docker run \
