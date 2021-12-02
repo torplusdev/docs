@@ -147,6 +147,7 @@ Use login and password is secret
                   </video>
                  </body>
                </html>" > ./static/index.html # or copy your static files
+    #After starting the docker container, go to the page https://torplus.{your domain name} from the TorPlus client. 2 added video files are displayed
 
 ## Run docker image:
 
