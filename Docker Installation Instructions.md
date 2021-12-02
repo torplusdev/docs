@@ -128,11 +128,25 @@ Use login and password is secret
     docker pull torplusdev/production:ipfs_haproxy-latest
 
 ## For host static files
-
+    
+    #Get the <cid> of the uploaded video file to the ipfs network. # Downloadable video formats must be supported by the CMS site. For example for wordpress - mp4, m4v, webm, ogv, wmv, flv.
     #Set static files:
         cd ${torplusworkspace}
         mkdir static 
-        echo "Hello" >> ./static/index.html # or copy your static files
+        echo "<html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>video</title>
+                 </head>
+                 <body>
+                  <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted>
+                   <source src="/ipfs/<insert your <cid> here>">
+                  </video>
+                   <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted>
+                   <source src="/ipfs/<insert your <cid> here>">
+                  </video>
+                 </body>
+               </html>" >> ./static/index.html # or copy your static files
 
 ## Run docker image:
 
