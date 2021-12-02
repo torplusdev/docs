@@ -133,20 +133,20 @@ Use login and password is secret
     #Set static files:
         cd ${torplusworkspace}
         mkdir static 
-        echo "<html> \
-                 <head> \
-                  <meta charset="utf-8"> \
-                  <title>video</title> \
-                 </head> \
-                 <body> \
-                  <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted> \
-                   <source src="/ipfs/<insert your <cid> here>"> \
-                  </video> \
-                   <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted> \
-                   <source src="/ipfs/<insert your <cid> here>"> \
-                  </video> \
-                 </body> \
-                </html>" >> ./static/index.html # or copy your static files
+        echo "<html>
+                 <head>
+                  <meta charset="utf-8">
+                  <title>video</title>
+                 </head>
+                 <body>
+                  <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted>
+                   <source src="/ipfs/insert your cid here">
+                  </video>
+                   <video width="400" height="300" controls="controls" controlsList="nodownload" autoplay muted>
+                   <source src="/ipfs/insert your cid here">
+                  </video>
+                 </body>
+               </html>" >> ./static/index.html # or copy your static files
 
 ## Run docker image:
 
