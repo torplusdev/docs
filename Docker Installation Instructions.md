@@ -86,20 +86,20 @@ Use login and password is secret
     
 ## Setting and testing Video site:
 
-    1. Go to the site https://torplus.videotpdemo.com/wp-admin/
-    2. Enter login "admin" and password "pP6LPt9IQ9e@0BkJIA" and click on the login button.
-    3. At the top left, move the cursor over the drop-down menu "da-video" and click on "Visit Site".
-![alt tag](https://user-images.githubusercontent.com/52072466/143416916-0071782d-16df-46c8-abc4-4b5501e0f74c.png)
+    1. Get the <cid> of the uploaded video file to the ipfs network. # Downloadable video formats must be supported by the CMS site. For example for wordpress - mp4, m4v, webm, ogv, wmv, flv.
+    2. Launch a docker container, as a result, get the website address in the TorPlus network - https://torplus.{your domain name}
+    3. Go to the WordPress site as an administrator.
+    4. Go to the site admin panel and add a new post or site page. # Or go to the video page.
+![image](https://user-images.githubusercontent.com/52072466/144409412-cb7434d0-1523-4980-bb37-cc7641c4f5a1.png)
 
-    4. Go to the video page (for example https://torplus.videotpdemo.com/video/sefozie-world/).
-    5. Click on the "Edit Video" button.
-![image](https://user-images.githubusercontent.com/52072466/143417235-44c2b2b4-f9a3-4d22-a33c-d1e99b11f8db.png)
+    5. When creating a page, click on the button "Toggle block inserter" and select a block "Video"
+![image](https://user-images.githubusercontent.com/52072466/144410808-e10f8e80-db67-4bb2-95d9-23e06813e01d.png)
+![image](https://user-images.githubusercontent.com/52072466/144410921-6ead500a-9822-4952-aff4-904ef575db13.png)
 
-    6. In the "Video data" block, change the path to the video in the field "Embed Video". (for example <iframe src="https://torplus.videotpdemo.com/ipfs/<your CID here>" allowfullscreen></iframe>). Сlick on the update button.
-![image](https://user-images.githubusercontent.com/52072466/143417536-fcb44ffc-849b-4a2b-bf85-aa5ebfccc357.png)
+    6. When inserting a video block, select "Insert from URL", enter a link to the video file in the format https://torplus.{your domain name}/ipfs/<cid> click on the button "Upload" and click on "Publish" or "Update".
+![image](https://user-images.githubusercontent.com/52072466/144411109-0769a596-7a6c-4b60-9894-cc768ed471c6.png)
 
-    7. Go to the video page https://torplus.videotpdemo.com/video/sefozie-world/ and the added video will be displayed on the page.
-
+    7. When you click on the "Preview" button, a WordPress site page and the added video will be displayed on the page.
 
 # Run web site as host
 
