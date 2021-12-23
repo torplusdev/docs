@@ -183,8 +183,8 @@ Use login and password is secret
 ![image](https://user-images.githubusercontent.com/52072466/144443915-afac936e-7eb7-4304-a834-3c017e3d3633.png)
     
     2. Add it to DNS TXT records:
-    Reg ru service (https://www.reg.ru/):
-![image](https://user-images.githubusercontent.com/52072466/144444036-fc43cd0f-3bec-476e-a9fd-ad311194d236.png)
+    Godaddy service (https://godaddy.com/):
+![image](https://user-images.githubusercontent.com/52072466/147237710-78fab3ee-3698-4090-8b42-2ce4e32fb485.png)
 
     #Azure portal service:
     1. Find DNS zone in resources:
