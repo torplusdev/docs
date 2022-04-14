@@ -36,7 +36,7 @@ The following are the key responsibilities of the chrome extension:
 
 - Chrome proxy configuration according to the selected mode.
 
-- Triggering DNS/ENS name resolution for torplus resources
+- Triggering DNS name resolution for torplus resources
 
 - Reporting time spent at torplus resources via attend report functionality
 
