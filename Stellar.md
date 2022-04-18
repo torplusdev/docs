@@ -13,7 +13,7 @@ Accounts are at the heart of the Stellar network. Accounts hold a balance in XLM
 
 To use a stellar account with TorPlus it needs to be able to make and accept payments in TorPlus currency - `TPT` assets.
 A stellar asset is defined using two parameters, asset code and issuer.
-For `TorPlusToken` asset the code is `TPT` and the issuer address is "GDTY7EETPKH2EY3NDNB3AZO2KTOSLSNHH7E3VM6C6B523J3Q5ZLLNK46".
+For `TorPlusToken` asset the code is `TPT` and the issuer address is "GC4EEF32WLRFI7ZU7SKZ4Q7PMITKYAAMZK65AKD2PLI6E5WKYCN7OZCE".
 Once you set up `TPT` currency for your account (Called setting up a trust line), you can receive and make payments in `TPT` currency.
 
 If you feel comfortable with Stellar, you can make the necessary changes to your account yourself, but if not - you can use helper scripts.
