@@ -7,7 +7,7 @@ Besides transaction fees, positive balance is required for keeping the account a
 All TorPlus software modules require connectivity to Stellar network, usually done through PaymentGateway module. PaymentGateway, in turn, connects directly to Stellar using one of the available Horizon servers.
 Since standard Horizon API is used, public horizon server can be used (https://horizon.stellar.org/) , or TorPlus dedicated server, as listed in the diagram below.
 
-![Stellar modules](./images/stellar modules.png)
+![image](https://user-images.githubusercontent.com/52072466/163132795-a702c639-ca0c-4a35-b7cc-ce535c53de61.png)
 
 Accounts are at the heart of the Stellar network. Accounts hold a balance in XLM, `torplus_token` or any other valid Stellar asset. An account consists of a Account ID (public key) and a *secret* (private) key. The Account ID is public: anyone can pay to the account, while the secret key is ... secret. Knowing the secret key is required for paying _by_ this account. For example, `SB66SLUNMNW4CP3JDZV2OUGPEELDNWQTVN6ZM2RRWKTZ3F2VG64JK5SR` is a secret key and `GDEAZKI6RFHTVJ5SG7HUZYIQKBUIEVRJOG75XODHXJUEYKTNEHO5P3A2` is its (public) account ID. Needless to say (but we'll say it anyway) **keep your secret keys secret**.
 
