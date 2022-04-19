@@ -1,8 +1,8 @@
-﻿# Technology
+# Technology
 
     TorPlus is built on top of Tor, and provides the same anonymity guarantees as Tor, but extends it in two ways:
 
-## Monetization layer.
+# Monetization layer.
 
     Tor relies on volunteers. Servers and bandwidth are donated. The only incentive for someone to operate a Tor server is charity. Unfortunately, this means few resources: today there are about 6000 Tor relays. For comparison, Google has about 1 million servers. TorPlus makes deploying relay servers profitable, which in turn means faster network.
 
