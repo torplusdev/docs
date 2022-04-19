@@ -48,7 +48,7 @@ The following are the key responsibilities of the chrome extension:
 
 The client package includes the basic infrastructure components of tor, ipfs and paymentgateway and in addition the chrome extension that allows access to torplus resources using Chrome browser.
 
-The extension is installed via Chrome Web Store ("TorPlus extension") available at https://chrome.google.com/webstore/detail/torplus-extension/cajbbnoklgmlkodcbdaecmganelijcgg?hl=en&authuser=1
+The extension is installed via Chrome Web Store ("TorPlus extension") available at https://chrome.google.com/webstore/detail/torplus-extension/cajbbnoklgmlkodcbdaecmganelijcgg?hl
 
 
 
