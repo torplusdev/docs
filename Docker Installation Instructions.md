@@ -31,8 +31,11 @@ Nickname- Nickname is some user friendly name that is used in Tor.
 1. Download "Stellar Desktop Client" by [link](https://github.com/ripplefox/stellarwallet/releases/)
 2. Run the program FoxletStellar
 3. Press the button "Create new account" ![image](https://user-images.githubusercontent.com/52072466/178701283-38a695c9-472f-404b-9357-a26862836663.png)
-4. 
-
+4. Then you need to select the option "Create an empty account" ![image](https://user-images.githubusercontent.com/52072466/178702176-8405ea52-5469-4868-aa85-88d70dc9620d.png)
+5. After you need to save the file with the crypto wallet cipher on the PC, this file will be used during each login to the created Stellar crypto wallet.
+6. Enter a new password and click on "Encrypt account"
+7. Then you need to get the secret key by clicking on the "Show secret key" button. This key is your seed. ![image](https://user-images.githubusercontent.com/52072466/178712306-a3c54982-9310-41d9-bf80-476d92931ea5.png)
+Attention! You must have at least 1 lumen in your account for it to be activated!
 
 ## Create workspace directory:
 
