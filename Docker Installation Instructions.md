@@ -28,10 +28,10 @@ Nickname- Nickname is some user friendly name that is used in Tor.
     
 ## Creating a Stellar wallet and getting a Seed:
 
-    1. Download "Stellar Desktop Client" by [link](https://github.com/ripplefox/stellarwallet/releases/)
-    2. Run the program FoxletStellar
-    3. Press the button "Create new account" ![image](https://user-images.githubusercontent.com/52072466/178701283-38a695c9-472f-404b-9357-a26862836663.png)
-    4. 
+1. Download "Stellar Desktop Client" by [link](https://github.com/ripplefox/stellarwallet/releases/)
+2. Run the program FoxletStellar
+3. Press the button "Create new account" ![image](https://user-images.githubusercontent.com/52072466/178701283-38a695c9-472f-404b-9357-a26862836663.png)
+4. 
 
 
 ## Create workspace directory:
