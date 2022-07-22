@@ -18,7 +18,7 @@ Nickname- Nickname is some user friendly name that is used in Tor.
 
     curl -fsSL https://get.docker.com -o get-docker.sh
     sh get-docker.sh
-    chmod +x /usr/bin/docker
+    sudo chmod +x /usr/bin/docker
     sudo groupadd docker
     sudo usermod -aG docker $USER && newgrp docker
 
