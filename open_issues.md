@@ -1,4 +1,3 @@
 Open Issues:
-1. DEX is not up yet
-2. Monthly Payment is not up yet 
-3. IPFS file deployment takes too much time
+1. Monthly Payment is not up yet 
+2. IPFS file deployment takes too much time
