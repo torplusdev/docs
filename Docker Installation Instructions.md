@@ -62,6 +62,7 @@ Attention! You must have at least 1 lumen in your account for it to be activated
     -p 28000:28080 \
     -e nickname=${nickname} \
     -e PP_ENV=prod \
+    -e PP_SINGLEHOP_HS=1 \
     -e seed=${seed} \
     -v ${PWD}/tor:/root/tor \
     -v ${PWD}/ipfs:/root/.ipfs \
